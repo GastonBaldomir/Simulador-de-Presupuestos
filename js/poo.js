@@ -7,9 +7,14 @@ class Servicio {
  
  }
 }
-personas.onclick= ()=> {
-   alert("El precio por persona es de $1000 por dia")
-}
+ function guardarLs(arr){
+    localStorage.setItem("presupuesto",JSON.stringify(arr));
+    almacenamiento.push(arr);
+ }
+ 
+// personas.onclick= ()=> {
+//    alert("El precio por persona es de $1000 por dia")
+// }
 // function alerta(){
 //     alert("funciona");
 // }
@@ -24,11 +29,11 @@ calcular.addEventListener('click', ()=> {
     let diasAlmuerzo= document.getElementById('diasAlmuerzo').value;
     let diasCena= document.getElementById('diasCena').value;
 
-
-    const objetos=[]
+    
+    let objetos=[]
         
     const personas = new Servicio("Hospedaje", 1000,cantidadDePersonas,dias);
-        personas.precio= (personas.precio*cantidadDePersonas*dias);//acá podria llamar una funcion multiplicar
+        personas.precio= (personas.precio*cantidadDePersonas*dias);
         objetos.push(personas)
 
     const limpieza = new Servicio("Limpieza", 500,0,diasLimp);
@@ -57,13 +62,19 @@ calcular.addEventListener('click', ()=> {
         }else cena.precio=0;
         objetos.push(cena)
 
-        const totalFinal=objetos.reduce((acc,el)=>{
-                return acc+el.precio;
-            },0)
-            document.getElementById('total').innerHTML=(usuario+" El total de los Servicios solicitados es de: $"+totalFinal)
-            console.log(objetos)
-            console.log(totalFinal)
-            
-})          
-
+    const totalFinal=objetos.reduce((acc,el)=>{
+         return acc+el.precio;
+    },0)
+    
+    document.getElementById('total').innerHTML=(usuario+" El total de los Servicios solicitados es de: $"+totalFinal);
+    
+    guardarLs(objetos)
+    //localStorage.removeItem("presupuesto") -- podria poner aca tambien el remove, pero no aparece guardado. 
+         
+})    
+let almacenamiento=[];
+    reset.addEventListener('click',()=>{
+        localStorage.removeItem("presupuesto")
+        document.getElementById('total').innerHTML=("Total:");
+    })
 

@@ -12,7 +12,7 @@
     <nav>
 
     </nav>
-    <main>
+    <main id="fondo">
         <section class="container" id="">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12 mt-3 d-flex" >
@@ -35,14 +35,14 @@
                         <input id="personas" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-2">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Cantidad de Dias</span>
+                        <span class="input-group-text " id="inputGroup-sizing-default">Dias</span>
                         <input id="dias" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         <div id="passwordHelpBlock" class="form-text mr-5">
-                            Indique la cantidad de dias que desean Hospedarse.
+                            Por favor, indique la cantidad de dias que desean Hospedarse.
                         </div>
                     </div>
                     <div class="input-group mb-2">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Servicio de Limpieza</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default">Limpieza</span>
                         <input id="diasLimp" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         <div id="passwordHelpBlock" class="form-text mr-5">
                             Indique la cantidad de dias que desea contratar el servicio.
@@ -72,8 +72,11 @@
                     <div class="">
                         <button type="button" class="btn btn-dark col-lg-12 col-12 mb-3 " id="calcular">Calcular</button>
                     </div>
+                    <div class="">
+                        <button type="reset" class="btn btn-dark col-lg-12 col-12 mb-3" id="reset">Reset</button>
+                    </div>
                     <div class="alert alert-info col-lg-11 col-11 m-3 mt-1" role="alert">
-                        <label id="total"></label>
+                        <label id="total">Total:</label>
                     </div>
                 </form>
                 

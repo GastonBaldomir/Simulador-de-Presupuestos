@@ -1,6 +1,7 @@
 main{
     background: rgb(148,233,226);
-background: radial-gradient(circle, rgba(148,233,226,1) 17%, rgba(148,233,226,1) 33%, rgba(79,108,109,1) 74%, rgba(20,1,9,1) 100%);
+background: radial-gradient(circle, rgba(148,233,226,1) 17%, rgba(148,233,226,1) 33%, rgba(79,108,109,1) 74%, rgba(20,1,9,1) 100%); 
+
 }
 #formulario{
     background-color: rgb(171, 253, 226);
