@@ -11,7 +11,21 @@ class Servicio {
     localStorage.setItem("presupuesto",JSON.stringify(arr));
     almacenamiento.push(arr);
  }
- 
+ let almacenamiento=[];
+
+ let container = document.querySelector(".container");
+ function crearHtml(arr){
+    let html;
+    arr.forEach((el) =>{
+        html=`<ul class="card w-25  text-center">
+        <li>Servicio: ${el.servicio}</h3>
+        <li>Personas: ${el.cantidadDePersonas}</h3>
+        <li>Dias: ${el.dias}</h3>
+        <li>$${el.precio}</h3>
+        </ul>`;
+        container.innerHTML+=html;
+    });
+ }
 // personas.onclick= ()=> {
 //    alert("El precio por persona es de $1000 por dia")
 // }
@@ -70,11 +84,16 @@ calcular.addEventListener('click', ()=> {
     
     guardarLs(objetos)
     //localStorage.removeItem("presupuesto") -- podria poner aca tambien el remove, pero no aparece guardado. 
-         
+    
+    
+     crearHtml(...almacenamiento)
 })    
-let almacenamiento=[];
-    reset.addEventListener('click',()=>{
-        localStorage.removeItem("presupuesto")
-        document.getElementById('total').innerHTML=("Total:");
-    })
-
+reset.addEventListener('click',()=>{
+    localStorage.removeItem("presupuesto")
+    document.getElementById('total').innerHTML=("Total:");
+    document.querySelector(".container");
+    let html=document.removeItem(container.innerHTML)
+    container.innerHTML+=html
+})
+console.log(almacenamiento)
+console.log()
