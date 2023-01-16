@@ -8,7 +8,11 @@ background: radial-gradient(circle, rgba(148,233,226,1) 17%, rgba(148,233,226,1)
 
 }
 #div{
-    width: 75%;
+    width: 100%;
+}
+.detalle{
+    display: flex;
+    height: 150px;
 }
 @media screen and (max-width: 767px){
     #div{

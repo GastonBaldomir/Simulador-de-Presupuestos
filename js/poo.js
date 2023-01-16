@@ -13,19 +13,25 @@ class Servicio {
  }
  let almacenamiento=[];
 
- let container = document.querySelector(".container");
+ let detalle = document.querySelector(".detalle");
  function crearHtml(arr){
-    let html;
+    let html="";
     arr.forEach((el) =>{
-        html=`<ul class="card w-25  text-center">
-        <li>Servicio: ${el.servicio}</h3>
-        <li>Personas: ${el.cantidadDePersonas}</h3>
-        <li>Dias: ${el.dias}</h3>
-        <li>$${el.precio}</h3>
-        </ul>`;
-        container.innerHTML+=html;
+        html=`<div class="card w-25  text-center">
+        <div class="list-group border-dark flex-column bg-dark text-white">Servicio: ${el.servicio}</div>
+        <p>Personas: ${el.cantidadDePersonas}</p>
+        <p>Dias: ${el.dias}</p>
+        <p>$${el.precio}</p>
+        </div>`;
+        detalle.innerHTML+=html;
     });
  }
+
+ function borrarHtml(){
+    let html="";
+
+    detalle.innerHTML+=html;
+    };
 // personas.onclick= ()=> {
 //    alert("El precio por persona es de $1000 por dia")
 // }
@@ -43,7 +49,7 @@ calcular.addEventListener('click', ()=> {
     let diasAlmuerzo= document.getElementById('diasAlmuerzo').value;
     let diasCena= document.getElementById('diasCena').value;
 
-
+    
     let objetos=[]
 
     const personas = new Servicio("Hospedaje", 1000,cantidadDePersonas,dias);
@@ -83,18 +89,13 @@ calcular.addEventListener('click', ()=> {
     document.getElementById('total').innerHTML=(usuario+" El total de los Servicios solicitados es de: $"+totalFinal);
 
     guardarLs(objetos)
-    //localStorage.removeItem("presupuesto") -- podria poner aca tambien el remove, pero no aparece guardado.
-
-    // FUNCION CREAR HTML--
-     //crearHtml(...almacenamiento)  CUANDO CREO LA LISTA EL PROGRAMA FUNCIONA SOLO UNA VEZ NO ME DEJA VOLVER A CALCULAR
-     // ACA TAMBIIEN PUEDO USAR EL ARRAY "OBJETOS" PERO CREÉ ALMACENAMIENTO PARA USAR EL LOCAL STORAGE
+   
+    document.getElementById('detalle').innerHTML=crearHtml(objetos)
+    
 })
 reset.addEventListener('click',()=>{
     localStorage.removeItem("presupuesto")
     document.getElementById('total').innerHTML=("Total: ");
-    // document.querySelector(".container");
-    // let html=document.removeItem(container.innerHTML)
-    // container.innerHTML+=html
+    let html="";
+    detalle.innerHTML=html
 })
-console.log(almacenamiento)
-console.log()
