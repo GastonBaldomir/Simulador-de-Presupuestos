@@ -6,9 +6,10 @@ background: radial-gradient(circle, rgba(148,233,226,1) 17%, rgba(148,233,226,1)
 #formulario{
     background-color: rgb(171, 253, 226);
 
+
 }
 #div{
-    width: 100%;
+    width: 75%;
 }
 .detalle{
     display: flex;

@@ -27,11 +27,6 @@ class Servicio {
     });
  }
 
- function borrarHtml(){
-    let html="";
-
-    detalle.innerHTML+=html;
-    };
 // personas.onclick= ()=> {
 //    alert("El precio por persona es de $1000 por dia")
 // }
@@ -85,12 +80,15 @@ calcular.addEventListener('click', ()=> {
     const totalFinal=objetos.reduce((acc,el)=>{
          return acc+el.precio;
     },0)
-
+    //renderizar html, para actualizar las cards sin que se creen otras nuevas,
+    let html="";
+    detalle.innerHTML=html
+    //////////
     document.getElementById('total').innerHTML=(usuario+" El total de los Servicios solicitados es de: $"+totalFinal);
 
     guardarLs(objetos)
    
-    document.getElementById('detalle').innerHTML=crearHtml(objetos)
+    crearHtml(objetos)
     
 })
 reset.addEventListener('click',()=>{
@@ -98,4 +96,5 @@ reset.addEventListener('click',()=>{
     document.getElementById('total').innerHTML=("Total: ");
     let html="";
     detalle.innerHTML=html
+    
 })

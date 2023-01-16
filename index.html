@@ -14,7 +14,7 @@
     </nav>
     <main id="fondo">
         <div class="container" id="">
-            <div class="row container">
+            <div class="row ">
                 <div class="col-lg-7 col-md-6 col-sm-12 mt-3" id="">
                     <ul class="list-group border-dark flex-column" id="div">
                         <li class="list-group-item  text-white bg-dark text-center">Lista de precios, por dia.</li>
@@ -24,51 +24,42 @@
                         <li class="list-group-item text-center">-Almuerzo $500, por persona.</li>
                         <li class="list-group-item text-center">-Cena $500, por persona.</li>
                     </ul> 
-                    <div class="detalle mt-3">
+                    <div class="detalle mt-3" id="">
                 
                     </div>
                 </div>
-                <form class="col-lg-5 col-md-6 col-sm-12 rounded mt-3 mb-3" id="formulario">
+                <form class="col-lg-5 col-md-6 col-sm-12 rounded mt-3 mb-3 vh-50" id="formulario">
                     <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
                         <input id="nombre" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     </div>
                     
-                    <div class="input-group input-group-sm mb-3">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad de Personas</span>
                         <input id="personas" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
-                    <div class="input-group input-group-sm mb-3">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text " id="inputGroup-sizing-sm">Cantidad de Dias</span>
                         <input id="dias" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
-                    <div class="input-group input-group-sm mb-2">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Limpieza</span>
-                        <input id="diasLimp" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                        <div id="passwordHelpBlock" class="form-text mr-5">
-                           <em>Indique la cantidad de dias que desea contratar nuestro servicio.</em> 
-                        </div>
+                        <input placeholder="Indique la cantidad de dias que desea contratar nuestro servicio." id="diasLimp" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        
                     </div>
-                    <div class="input-group input-group-sm mb-2">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Desayuno</span>
-                        <input id="diasDesayuno" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                        <div id="passwordHelpBlock" class="form-text mr-5">
-                           <em>Indique la cantidad de dias que desea contratar el servicio.</em> 
-                        </div>
+                        <input placeholder="Indique la cantidad de dias que desea contratar el servicio." id="diasDesayuno" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     </div>
-                    <div class="input-group input-group-sm mb-2">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Almuerzo</span>
-                        <input id="diasAlmuerzo" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                        <div id="passwordHelpBlock" class="form-text mr-5">
-                           <em>Indique la cantidad de dias que desea contratar el servicio.</em> 
-                        </div>
+                        <input placeholder="Indique la cantidad de dias que desea contratar el servicio." id="diasAlmuerzo" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        
                     </div>
-                    <div class="input-group input-group-sm mb-2">
+                    <div class="input-group input-group-sm mt-3 mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Cena</span>
-                        <input id="diasCena" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                        <div id="passwordHelpBlock" class="form-text mr-5">
-                                <em>Por ultimo, indique la cantidad de dias que desea contratar el servicio.</em>
-                        </div>
+                        <input placeholder="Por ultimo, indique la cantidad de dias que desea contratar el servicio." id="diasCena" type="number" class="form-control w-75" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                       
                     </div> 
                     <div class="">
                         <button type="button" class="btn btn-sm btn-dark col-lg-12 col-12 mb-3 " id="calcular">Calcular</button>
