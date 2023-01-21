@@ -17,7 +17,7 @@ class Servicio {
  function crearHtml(arr){
     let html="";
     arr.forEach((el) =>{
-        html=`<div class="card w-25  text-center">
+        html=`<div class="container card w-25  text-center">
         <div class="list-group border-dark flex-column bg-dark text-white">Servicio: ${el.servicio}</div>
         <p>Personas: ${el.cantidadDePersonas}</p>
         <p>Dias: ${el.dias}</p>
