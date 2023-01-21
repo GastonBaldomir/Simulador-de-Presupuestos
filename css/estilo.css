@@ -1,28 +1,36 @@
-main{
+body{
     background: rgb(148,233,226);
 background: radial-gradient(circle, rgba(148,233,226,1) 17%, rgba(148,233,226,1) 33%, rgba(79,108,109,1) 74%, rgba(20,1,9,1) 100%); 
-
+padding:  50px;
 }
 #formulario{
     background-color: rgb(171, 253, 226);
-
-
 }
 #div{
+    margin-left: 70px;
     width: 75%;
 }
 .detalle{
     display: flex;
-    height: 150px;
+    height: auto;
 }
+@media screen and (max-width: 991px){
+    #div{
+        margin-left: 40px; 
+        width: 75%;
+    }
+    .detalle{
+        font-size: 80%;
+    }
+} 
 @media screen and (max-width: 767px){
     #div{
+        margin-left: 0px;
         width: 100%;
     }
 }
-@media screen and (max-width: 575px){
-    #formulario{
-        margin-left: px;
-        margin-right: px;
-    }
+@media screen and (max-width: 500px){
+    body{
+        padding: 5px;
+}
 }
