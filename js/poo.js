@@ -14,26 +14,20 @@ class Servicio {
  let almacenamiento=[];
 
  let detalle = document.querySelector(".detalle");
+ 
  function crearHtml(arr){
     let html="";
     arr.forEach((el) =>{
-        html=`<div class="bg-light card w-25  text-center">
-        <div class="list-group border-dark flex-column bg-dark text-white">Servicio: <br>${el.servicio}</div>
-        <p>Personas: ${el.cantidadDePersonas}</p>
-        <p>Dias: ${el.dias}</p>
-        <p>$${el.precio}</p>
+        const {servicio, precio, cantidadDePersonas, dias}=el;
+        html=`<div class="bg-light card w-25 text-center detalleClass">
+        <div class="list-group border-dark flex-column bg-dark text-white">Servicio: <br>${servicio}</div>
+        <p>Personas: ${cantidadDePersonas}</p>
+        <p>Dias: ${dias}</p>
+        <p>$${precio}</p>
         </div>`;
         detalle.innerHTML+=html;
     });
  }
-
-// personas.onclick= ()=> {
-//    alert("El precio por persona es de $1000 por dia")
-// }
-// function alerta(){
-//     alert("funciona");
-// }
-// personas.onmouseover = ()=>alerta();
 
 calcular.addEventListener('click', ()=> {
     let usuario = document.getElementById('nombre').value;
@@ -44,7 +38,6 @@ calcular.addEventListener('click', ()=> {
     let diasAlmuerzo= document.getElementById('diasAlmuerzo').value;
     let diasCena= document.getElementById('diasCena').value;
 
-    
     let objetos=[]
 
     const personas = new Servicio("Hospedaje", 1000,cantidadDePersonas,dias);
@@ -52,31 +45,21 @@ calcular.addEventListener('click', ()=> {
         objetos.push(personas)
 
     const limpieza = new Servicio("Limpieza", 500,0,diasLimp);
-        if(diasLimp!=1){
-            limpieza.precio=limpieza.precio*diasLimp;
-        }
-
+        diasLimp!=0 ?  limpieza.precio=limpieza.precio*diasLimp : limpieza.precio=0;
         objetos.push(limpieza)
 
     const desayuno = new Servicio("Desayuno", 350, cantidadDePersonas, diasDesayuno)
-        if(diasDesayuno!=0){
-            desayuno.precio=desayuno.precio*diasDesayuno*cantidadDePersonas;
-        }else desayuno.precio=0;
-
+        diasDesayuno!=0 ? (desayuno.precio=desayuno.precio*diasDesayuno*cantidadDePersonas) : desayuno.precio=0;
         objetos.push(desayuno)
 
     const almuerzo = new Servicio("Almuerzo", 500, cantidadDePersonas, diasAlmuerzo)
-        if(diasAlmuerzo!=0){
-            almuerzo.precio=almuerzo.precio*diasAlmuerzo*cantidadDePersonas;
-        }else almuerzo.precio=0;
+        diasAlmuerzo!=0 ? almuerzo.precio=almuerzo.precio*diasAlmuerzo*cantidadDePersonas : almuerzo.precio=0;
         objetos.push(almuerzo)
 
     const cena = new Servicio("Cena", 500, cantidadDePersonas, diasCena)
-        if(diasCena!=0){
-            cena.precio=cena.precio*diasCena*cantidadDePersonas;
-        }else cena.precio=0;
+        diasCena!=0 ? cena.precio=cena.precio*diasCena*cantidadDePersonas : cena.precio=0;
         objetos.push(cena)
-
+    //.reduce recibe un acumulador y un elemento. el acumulador se setea en 0 al final.
     const totalFinal=objetos.reduce((acc,el)=>{
          return acc+el.precio;
     },0)
@@ -96,5 +79,36 @@ reset.addEventListener('click',()=>{
     document.getElementById('total').innerHTML=("Total: ");
     let html="";
     detalle.innerHTML=html
-    
-})
+
+    //alert
+    Swal.fire({
+        title: 'Su simulación será reestablecida, Gracias!',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+    })
+
+const tabla=document.getElementById('div');
+
+function crearLista(arr){
+    let lista="";
+    arr.forEach((el) =>{
+        const {servicio, precio}=el;
+        lista=`<div class="bg-light card text-center w-100 liPrecios">
+        <li class="list-group border-dark flex-column bg-dark text-white ">Servicio: <br>${servicio}</li>
+        <p>$${precio}</p>
+        </div>`;
+        div.innerHTML+=lista;
+    });
+ }
+
+
+fetch('./data/data.json')
+ .then((response)=> response.json())
+ .then((data)=>{
+   crearLista(data)
+  })
