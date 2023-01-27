@@ -4,15 +4,16 @@ class Servicio {
     this.precio=precio;
     this.cantidadDePersonas=cantidadDePersonas;
     this.dias=dias;
-
  }
 }
+//guardar en local storage//
  function guardarLs(arr){
     localStorage.setItem("presupuesto",JSON.stringify(arr));
     almacenamiento.push(arr);
  }
  let almacenamiento=[];
 
+//crear resumen de cada servicio en cards//
  let detalle = document.querySelector(".detalle");
  
  function crearHtml(arr){
@@ -92,6 +93,7 @@ reset.addEventListener('click',()=>{
       })
     })
 
+//lista de precios, info extraida de data.json//
 const tabla=document.getElementById('div');
 
 function crearLista(arr){
